@@ -10,22 +10,23 @@ public class AppDriver {
         String fileName = "";       // Stores the file name (e.g., shapes1.txt)
         String sortType = "";       // Stores the sort type (e.g., height, base area, volume)
         String sortAlgorithm = "";  // Stores the sorting algorithm (e.g., bubble, quick, merge)
-
+        	
         // Step 2: Parse command line arguments
         for (int i = 0; i < args.length; i++) {
-            switch (args[i].toLowerCase()) {
+        	String current = args[i].toLowerCase();
+            switch (String.valueOf(current.charAt(0))+String.valueOf(current.charAt(1))) {
                 case "-f":  // File name argument
-                    fileName = args[++i];  // Store the next argument as the file name
+                    fileName = current.substring(2);  // Store the next argument as the file name
                     break;
                 case "-t":  // Sort type argument
-                    sortType = args[++i];  // Store the next argument as the sort type
+                    sortType = current.substring(2);  // Store the next argument as the sort type                    
                     break;
                 case "-s":  // Sorting algorithm argument
-                    sortAlgorithm = args[++i];  // Store the next argument as the sorting algorithm
+                    sortAlgorithm = current.substring(2);  // Store the next argument as the sorting algorithm
                     break;
             }
         }
-
+        
         // Step 3: Validate command line arguments
         if (fileName.isEmpty() || sortType.isEmpty() || sortAlgorithm.isEmpty()) {
             System.err.println("Missing command line arguments. Usage: java -jar Sort.jar -f <file> -t <sortType> -s <sortAlgorithm>");

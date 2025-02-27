@@ -14,6 +14,11 @@ public abstract class Shape implements Comparable<Shape> {
     public abstract double getBaseArea();
     public abstract double getVolume();
 
+    // Getter for height
+    public double getHeight() {
+        return height;
+    }
+
     // Compare shapes by height (for Comparable interface)
     @Override
     public int compareTo(Shape other) {
@@ -38,5 +43,10 @@ public abstract class Shape implements Comparable<Shape> {
                 return Double.compare(s1.getVolume(), s2.getVolume());
             }
         };
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + " [height=" + height + ", baseArea=" + getBaseArea() + ", volume=" + getVolume() + "]";
     }
 }

@@ -15,7 +15,7 @@ import shapes.TriangularPrism;
 
 public class ShapeParser {
     public static Shape[] parseFile(String fileName) throws FileNotFoundException {
-        File file = new File("res/"+fileName);
+        File file = new File(fileName);
         Scanner scanner = new Scanner(file);
 
         int numShapes = Integer.parseInt(scanner.nextLine());

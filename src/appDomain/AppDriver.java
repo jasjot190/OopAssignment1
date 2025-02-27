@@ -13,16 +13,18 @@ public class AppDriver {
         	
         // Step 2: Parse command line arguments
         for (int i = 0; i < args.length; i++) {
-        	String current = args[i].toLowerCase();
-            switch (String.valueOf(current.charAt(0))+String.valueOf(current.charAt(1))) {
-                case "-f":  // File name argument
-                    fileName = current.substring(2);  // Store the next argument as the file name
+            switch (args[i].toLowerCase()) {
+                case "f":  // File name argument
+                    fileName = args[++i];  // Store the next argument as the file name
+                    System.out.println(args[i]);
                     break;
-                case "-t":  // Sort type argument
-                    sortType = current.substring(2);  // Store the next argument as the sort type                    
+                case "t":  // Sort type argument
+                    sortType = args[++i];  // Store the next argument as the sort type
+                    System.out.println(i);
                     break;
-                case "-s":  // Sorting algorithm argument
-                    sortAlgorithm = current.substring(2);  // Store the next argument as the sorting algorithm
+                case "s":  // Sorting algorithm argument
+                    sortAlgorithm = args[++i];  // Store the next argument as the sorting algorithm
+                    System.out.println(i);
                     break;
             }
         }

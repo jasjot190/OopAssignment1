@@ -15,10 +15,11 @@ public class AppDriver {
 
         // Step 2: Parse command line arguments
         for (int i = 0; i < args.length; i++) {
-            switch (args[i].toLowerCase()) {
+        	String current = args[i].toLowerCase();
+            switch (String.valueOf(current.charAt(0))+String.valueOf(current.charAt(1))) {
                 case "-f":  // File name argument
                     if (i + 1 < args.length) {
-                        fileName = args[++i];  // Store the next argument as the file name
+                        fileName = args[i].substring(2);  // Store the next argument as the file name
                     } else {
                         System.err.println("Missing file name after -f");
                         return;
@@ -26,15 +27,15 @@ public class AppDriver {
                     break;
                 case "-t":  // Sort type argument
                     if (i + 1 < args.length) {
-                        sortType = args[++i];  // Store the next argument as the sort type
+                        sortType = args[i].substring(2);  // Store the next argument as the sort type
                     } else {
                         System.err.println("Missing sort type after -t");
                         return;
                     }
                     break;
                 case "-s":  // Sorting algorithm argument
-                    if (i + 1 < args.length) {
-                        sortAlgorithm = args[++i];  // Store the next argument as the sorting algorithm
+                    if (i + 1 < args.length+1) {
+                        sortAlgorithm = args[i].substring(2);  // Store the next argument as the sorting algorithm
                     } else {
                         System.err.println("Missing sorting algorithm after -s");
                         return;

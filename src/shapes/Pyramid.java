@@ -7,7 +7,12 @@ public class Pyramid extends Shape {
         super(height);
         this.edgeLength = edgeLength;
     }
-
+    
+    @Override
+    public String getType() {
+        return "Pyramid";
+    }
+    
     @Override
     public double getBaseArea() {
         return edgeLength * edgeLength; // Base area for a square pyramid

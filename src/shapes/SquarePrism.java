@@ -7,6 +7,11 @@ public class SquarePrism extends Shape {
         super(height);
         this.edgeLength = edgeLength;
     }
+    
+    @Override
+    public String getType() {
+        return "SquarePrism";
+    }
 
     @Override
     public double getBaseArea() {

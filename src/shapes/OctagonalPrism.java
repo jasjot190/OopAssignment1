@@ -7,6 +7,11 @@ public class OctagonalPrism extends Shape {
         super(height);
         this.edgeLength = edgeLength;
     }
+    
+    @Override
+    public String getType() {
+        return "OctagonalPrism";
+    }
 
     @Override
     public double getBaseArea() {

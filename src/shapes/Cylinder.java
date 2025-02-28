@@ -7,7 +7,12 @@ public class Cylinder extends Shape {
         super(height);
         this.radius = radius;
     }
-
+    
+    @Override
+    public String getType() {
+        return "Cylinder";
+    }
+    
     @Override
     public double getBaseArea() {
         return Math.PI * radius * radius;

@@ -7,7 +7,12 @@ public class TriangularPrism extends Shape {
         super(height);
         this.edgeLength = edgeLength;
     }
-
+    
+    @Override
+    public String getType() {
+        return "TriangularPrism";
+    }
+    
     @Override
     public double getBaseArea() {
         return (Math.sqrt(3) / 4) * edgeLength * edgeLength; // Base area for an equilateral triangle

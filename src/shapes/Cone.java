@@ -7,6 +7,11 @@ public class Cone extends Shape {
         super(height);
         this.radius = radius;
     }
+    
+    @Override
+    public String getType() {
+        return "Cone";
+    }
 
     @Override
     public double getBaseArea() {

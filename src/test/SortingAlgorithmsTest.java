@@ -61,6 +61,57 @@ public class SortingAlgorithmsTest {
         assertTrue(isSorted(shapes, comparator));
     }
 
+    // Tests the mergeSort method of SortingAlgorithms.
+    @Test
+    public void testMergeSort() {
+        // Create an array of shapes
+        Shape[] shapes = {
+            new Cylinder(10, 5),
+            new Cone(8, 3),
+            new Pyramid(6, 4)
+        };
+        // Create a comparator to compare shapes by height
+        Comparator<Shape> comparator = Comparator.comparingDouble(Shape::getHeight);
+        // Sort the shapes using merge sort
+        SortingAlgorithms.mergeSort(shapes, comparator);
+        // Assert that the shapes are sorted
+        assertTrue(isSorted(shapes, comparator));
+    }
+    
+    // Tests the quickSort method of SortingAlgorithms.
+    @Test
+    public void testQuickSort() {
+        // Create an array of shapes
+        Shape[] shapes = {
+            new Cylinder(10, 5),
+            new Cone(8, 3),
+            new Pyramid(6, 4)
+        };
+        // Create a comparator to compare shapes by height
+        Comparator<Shape> comparator = Comparator.comparingDouble(Shape::getHeight);
+        // Sort the shapes using quick sort
+        SortingAlgorithms.quickSort(shapes, comparator);
+        // Assert that the shapes are sorted
+        assertTrue(isSorted(shapes, comparator));
+    }
+    
+    // Tests the heapSort method of SortingAlgorithms.
+    @Test
+    public void testHeapSort() {
+        // Create an array of shapes
+        Shape[] shapes = {
+            new Cylinder(10, 5),
+            new Cone(8, 3),
+            new Pyramid(6, 4)
+        };
+        // Create a comparator to compare shapes by height
+        Comparator<Shape> comparator = Comparator.comparingDouble(Shape::getHeight);
+        // Sort the shapes using heap sort
+        SortingAlgorithms.heapSort(shapes, comparator);
+        // Assert that the shapes are sorted
+        assertTrue(isSorted(shapes, comparator));
+    }
+    
     /**
      * Helper method to check if an array of shapes is sorted.
      *

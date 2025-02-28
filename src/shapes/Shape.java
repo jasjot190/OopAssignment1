@@ -18,6 +18,9 @@ public abstract class Shape implements Comparable<Shape> {
     public double getHeight() {
         return height;
     }
+    
+    // Getter for type
+    public abstract String getType();
 
     // Compare shapes by height (for Comparable interface)
     @Override
